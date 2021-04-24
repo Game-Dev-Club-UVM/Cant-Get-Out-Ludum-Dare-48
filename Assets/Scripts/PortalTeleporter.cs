@@ -9,6 +9,10 @@ public class PortalTeleporter : MonoBehaviour
 
     private bool playerIsOverlapping = false;
 
+    // An amount to move the player by to make sure the player is not
+    // colliding with the other portal immediately after going through
+    public static float teleportationScaleFactor = 1.8f;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,19 +24,18 @@ public class PortalTeleporter : MonoBehaviour
         if (other.tag == "Player")
         {
             playerIsOverlapping = true;
-            Vector3 incomingOffset = player.transform.position - transform.position;
-            float rotationDiff = Quaternion.Angle(transform.rotation, receiver.rotation);
-            float incomingAngle = Vector3.Angle(incomingOffset, transform.forward);
-            Debug.Log("inc angle " + incomingAngle);
-            float outgoingAngle = -incomingAngle;
-            Vector3 outgoingOffset = Quaternion.Euler(0f, outgoingAngle, 0f) * incomingOffset;
-            player.transform.Rotate(Vector3.up, rotationDiff + 2*outgoingAngle);
+
+            Vector3 portalToPlayer = player.transform.position - transform.position;
+            float rotationDiff = -Quaternion.Angle(transform.rotation, receiver.rotation);
+            //rotationDiff += 180;
+            player.transform.Rotate(Vector3.up, rotationDiff + 180f);
+            Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
             player.enabled = false;
-            player.transform.position = receiver.position + outgoingOffset;
+            player.transform.position = receiver.position + teleportationScaleFactor * positionOffset;
+            Debug.Log("teleported to " + (receiver.position + positionOffset));
             player.enabled = true;
-            Debug.Log("incoming offset " + incomingOffset.ToString());
-            Debug.Log("outgoing offset " + outgoingOffset.ToString());
-            playerIsOverlapping = false;
+
+            playerIsOverlapping = false;            
         }
     }
 
@@ -42,10 +45,5 @@ public class PortalTeleporter : MonoBehaviour
         {
             playerIsOverlapping = false;
         }
-    }
-
-    public static float Angle2D(Vector3 v1, Vector3 v2)
-    {
-        return Mathf.Atan2(v2.z - v1.z, v2.x - v1.x);
     }
 }

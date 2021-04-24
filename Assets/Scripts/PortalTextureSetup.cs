@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PortalTextureSetup : MonoBehaviour
 {
-
     public Camera camera2;
 
     public Material cameraMat2;
@@ -12,7 +11,7 @@ public class PortalTextureSetup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(camera2.targetTexture != null)
+        if (camera2.targetTexture != null)
         {
             camera2.targetTexture.Release();
         }
