@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &77293010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 77293011}
+  m_Layer: 0
+  m_Name: Portal2Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &77293011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77293010}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2, z: 5.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2079749669}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &129563352
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 519048442}
   - component: {fileID: 519048441}
+  - component: {fileID: 519048443}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -645,7 +676,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519048440}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bfff04cc934d944e8f02582d68e68ea, type: 3}
   m_Name: 
@@ -666,6 +697,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519048443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519048440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c268450bb5a1ca4ba7bee378cc9996d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalPairPrefab: {fileID: 2745152356997744925, guid: e227cd32e5b1fb44b89c0d8267b7a52c, type: 3}
+  player: {fileID: 1820157825}
+  playerCameraTransform: {fileID: 136472574}
+  portal1transform: {fileID: 816999434}
+  portal2transform: {fileID: 77293011}
 --- !u!1001 &581723306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -732,6 +780,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2721737945060594939, guid: c4571a7a0374e1c4789e6716fbe27545, type: 3}
   m_PrefabInstance: {fileID: 581723306}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &816999433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816999434}
+  m_Layer: 0
+  m_Name: Portal1Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &816999434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816999433}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2, z: 5.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1141089673}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &878912004
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &956070373
 Transform:
   m_ObjectHideFlags: 0
@@ -1060,7 +1138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1111722972
 Transform:
   m_ObjectHideFlags: 0
@@ -1110,6 +1188,7 @@ Transform:
   - {fileID: 462196952}
   - {fileID: 581723307}
   - {fileID: 1111722972}
+  - {fileID: 816999434}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1328,7 +1407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1476474455
 Camera:
   m_ObjectHideFlags: 0
@@ -1398,9 +1477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb24c6c364decd4f9d5f0b4aafd170e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 136472574}
-  portal: {fileID: 956070373}
-  playerPortal: {fileID: 1111722972}
 --- !u!1001 &1492067562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1885,6 +1961,7 @@ Transform:
   - {fileID: 1010902669}
   - {fileID: 956070373}
   - {fileID: 129563356}
+  - {fileID: 77293011}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

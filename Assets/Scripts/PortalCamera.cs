@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
 {
-    public Transform playerCamera;
-    public Transform portal;
-    public Transform playerPortal;
+    private Transform playerCamera;
+    private Transform portal;
+    private Transform playerPortal;
 
     private bool isActive = true;
 
@@ -25,5 +25,18 @@ public class PortalCamera : MonoBehaviour
     public void SetIsActive(bool input)
     {
         isActive = input;
+    }
+
+    public void SetPlayerCamera(Transform input)
+    {
+        playerCamera = input;
+    }
+    public void SetPortal(Transform input)
+    {
+        portal = input;
+    }
+    public void SetPlayerPortal(Transform input)
+    {
+        playerPortal = input;
     }
 }
