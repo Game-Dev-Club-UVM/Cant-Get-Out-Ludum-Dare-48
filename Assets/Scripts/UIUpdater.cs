@@ -46,4 +46,27 @@ public class UIUpdater : MonoBehaviour
 
         UpdateText();
     }
+
+    public void PickupKey()
+    {
+        keysLeftInRoom--;
+        keysHeld++;
+
+        UpdateText();
+    }
+
+    public void ThrowKey()
+    {
+        keysLeftInRoom++;
+        keysHeld--;
+
+        UpdateText();
+    }
+
+    public void UseKey()
+    {
+        keysHeld--;
+
+        UpdateText();
+    }
 }
