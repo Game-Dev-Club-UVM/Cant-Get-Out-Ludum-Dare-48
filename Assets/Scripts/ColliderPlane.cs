@@ -7,7 +7,7 @@ public class ColliderPlane : MonoBehaviour
     private CharacterController player;
     private Transform receiver;
 
-    public static float playerDiameter = 0.8f;
+    public static float playerDiameter = 1.2f;
     // Go a little further past the portal, so you don't go back into it immediately
     // Or be inside the door
     public static float offset = 0.1f;
