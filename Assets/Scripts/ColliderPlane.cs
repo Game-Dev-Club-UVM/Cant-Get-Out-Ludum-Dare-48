@@ -7,6 +7,11 @@ public class ColliderPlane : MonoBehaviour
     private CharacterController player;
     private Transform receiver;
 
+    public static float playerDiameter = 0.8f;
+    // Go a little further past the portal, so you don't go back into it immediately
+    // Or be inside the door
+    public static float offset = 0.1f;
+
     private int roomID;
     private int otherRoomID;
 
@@ -31,12 +36,13 @@ public class ColliderPlane : MonoBehaviour
         if (other.tag == "Player")
         {
             // Translate and rotate the player to go through the portal
-            Vector3 portalToPlayer = player.transform.position - transform.position;
-            float rotationDiff = -Quaternion.Angle(transform.rotation, receiver.rotation);
-            player.transform.Rotate(Vector3.up, rotationDiff + 180f);
-            Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
+            float rotationDiff = -Vector3.SignedAngle(transform.up, receiver.up, Vector3.up);
+            player.transform.Rotate(Vector3.up, rotationDiff);
+
+            float oldY = player.transform.position.y;
             player.enabled = false;
-            player.transform.position = receiver.position + teleportationScaleFactor * positionOffset;
+            player.transform.position = receiver.position + (playerDiameter + offset) * receiver.up;
+            player.transform.position += Vector3.down * oldY;
             player.enabled = true;
 
             // Let everyone know where the player is
