@@ -1,22 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIUpdater : MonoBehaviour
 {
-    public int maxKeysInRoom = 2;
-    public int keysLeftInRoom = 2;
+    public int maxKeysInRoom = 0;
+    public int keysLeftInRoom = 0;
     public int keysHeld = 0;
-    public int depth = 1;
-    public int areasExplored = 1;
+    public int depth = 0;
+    public int areasExplored = 0;
 
-    // Update is called once per frame
-    void Update()
+    private TextMeshProUGUI keysLeftText;
+    private TextMeshProUGUI keysHeldText;
+    private TextMeshProUGUI depthText;
+    private TextMeshProUGUI areasExploredText;
+
+    private void Start()
     {
-        
+        keysLeftText = GameObject.Find("KeysLeftText").GetComponent<TextMeshProUGUI>();
+        keysHeldText = GameObject.Find("KeysHeldText").GetComponent<TextMeshProUGUI>();
+        depthText = GameObject.Find("DepthText").GetComponent<TextMeshProUGUI>();
+        areasExploredText = GameObject.Find("ExploredText").GetComponent<TextMeshProUGUI>();
+
+        UpdateText();
     }
 
-    void UpdateToNewRoom(int maxKeysInRoom, int keysLeftInRoom, int depth, bool explored)
+    private void UpdateText()
+    {
+        keysLeftText.text = keysLeftInRoom + " / " + maxKeysInRoom;
+        keysHeldText.text = "x " + keysHeld;
+        depthText.text = "Depth: " + depth;
+        areasExploredText.text = "Areas Explored: " + areasExplored;
+    } 
+
+    public void UpdateToRoom(int maxKeysInRoom, int keysLeftInRoom, int depth, bool explored)
     {
         if (!explored)
         {
@@ -25,5 +43,7 @@ public class UIUpdater : MonoBehaviour
         this.depth = depth;
         this.maxKeysInRoom = maxKeysInRoom;
         this.keysLeftInRoom = keysLeftInRoom;
+
+        UpdateText();
     }
 }
