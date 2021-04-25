@@ -32,8 +32,8 @@ public class UIUpdater : MonoBehaviour
 
     private void Update()
     {
-        keysHeld = stats.keys;
-        UpdateText();
+        //keysHeld = stats.keys;
+        //UpdateText();
     }
 
     private void UpdateText()
