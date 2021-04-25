@@ -92,7 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3762970082871962996}
   - component: {fileID: 1362063302015567068}
-  - component: {fileID: 1362063302015567056}
+  - component: {fileID: -4424711603939626496}
+  - component: {fileID: -7981913669908824073}
   - component: {fileID: 776294776166376137}
   - component: {fileID: 1362063302015567069}
   m_Layer: 0
@@ -133,8 +134,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1362063302015567056
-SphereCollider:
+--- !u!65 &-4424711603939626496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4572017798874740686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.25}
+  m_Center: {x: 0, y: -0.21, z: 0}
+--- !u!65 &-7981913669908824073
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -144,8 +158,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.71
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.93, y: 1.04, z: 0.32}
+  m_Center: {x: -0.12, y: -0.16, z: 0}
 --- !u!82 &776294776166376137
 AudioSource:
   m_ObjectHideFlags: 0
@@ -157,7 +171,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 044fa6f4cc84bcd4f8565ff98e21ae29, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -259,4 +273,3 @@ MonoBehaviour:
   throwForce: 400
   soundToPlay:
   - {fileID: 8300000, guid: 044fa6f4cc84bcd4f8565ff98e21ae29, type: 3}
-  dmg: 0
