@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9baf9773c8d2d2843ac7f23b5f4d15c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1000
+  mouseSensitivity: 100
   playerBody: {fileID: 267143329440755399}
 --- !u!1 &267143329440755398
 GameObject:
@@ -192,6 +192,9 @@ GameObject:
   - component: {fileID: 267143329440755392}
   - component: {fileID: 267143329440755394}
   - component: {fileID: 267143329440755393}
+  - component: {fileID: 1120684917}
+  - component: {fileID: 1120684918}
+  - component: {fileID: 3007881473813102393}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -241,8 +244,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 2.8
+  m_Radius: 0.6
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -261,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 267143329440755394}
-  speed: 12
+  speed: 4
   gravity: -9.81
   jumpHeight: 3
   groundCheck: {fileID: 267143329747918233}
@@ -269,6 +272,52 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1120684917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267143329440755398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a9353dd9ce68e41bb20e59cb5d878a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: 0
+--- !u!114 &1120684918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267143329440755398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdd604be13a4ad40a6bdebb5219b876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyPrefab: {fileID: 0}
+  player: {fileID: 267143329440755399}
+  playercam: {fileID: 267143329095914365}
+  keys: 0
+--- !u!114 &3007881473813102393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267143329440755398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e76add6aac13d0478938c03eccc4f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxKeysInRoom: 0
+  keysLeftInRoom: 0
+  keysHeld: 0
+  depth: 0
+  areasExplored: 0
 --- !u!1 &267143329747918232
 GameObject:
   m_ObjectHideFlags: 0

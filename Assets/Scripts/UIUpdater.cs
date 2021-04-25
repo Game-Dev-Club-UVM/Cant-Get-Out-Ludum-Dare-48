@@ -16,6 +16,8 @@ public class UIUpdater : MonoBehaviour
     private TextMeshProUGUI depthText;
     private TextMeshProUGUI areasExploredText;
 
+    private PlayerStatus stats;
+
     private void Start()
     {
         keysLeftText = GameObject.Find("KeysLeftText").GetComponent<TextMeshProUGUI>();
@@ -23,6 +25,14 @@ public class UIUpdater : MonoBehaviour
         depthText = GameObject.Find("DepthText").GetComponent<TextMeshProUGUI>();
         areasExploredText = GameObject.Find("ExploredText").GetComponent<TextMeshProUGUI>();
 
+        stats = this.GetComponent<PlayerStatus>();
+
+        UpdateText();
+    }
+
+    private void Update()
+    {
+        keysHeld = stats.keys;
         UpdateText();
     }
 
