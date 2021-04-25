@@ -32,8 +32,8 @@ public class UIUpdater : MonoBehaviour
 
     private void Update()
     {
-        keysHeld = stats.keys;
-        UpdateText();
+        //keysHeld = stats.keys;
+        //UpdateText();
     }
 
     private void UpdateText()
@@ -41,7 +41,7 @@ public class UIUpdater : MonoBehaviour
         keysLeftText.text = keysLeftInRoom + " / " + maxKeysInRoom;
         keysHeldText.text = "x " + keysHeld;
         depthText.text = "Depth: " + depth;
-        areasExploredText.text = "Areas Explored: " + areasExplored;
+        areasExploredText.text = "Rooms Explored: " + areasExplored;
     } 
 
     public void UpdateToRoom(int maxKeysInRoom, int keysLeftInRoom, int depth, bool explored)

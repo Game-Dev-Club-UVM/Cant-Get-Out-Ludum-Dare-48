@@ -8,19 +8,28 @@ public class ThorwKey : MonoBehaviour
     public Rigidbody keyPrefab;
     public Transform player;
     public Transform playercam;
-    public int keys = 1;
+    public int keys = 0;
 
 
     void Update()
     {
-        keys = player.GetComponent<PlayerStatus>().keys;
+        keys = player.GetComponent<UIUpdater>().keysHeld;
         if (Input.GetButtonDown("Fire1") && keys > 0 )
         {
-            keys = player.GetComponent<PlayerStatus>().keys--;
+            
             Rigidbody keyBody;
-            keyBody = Instantiate(keyPrefab, playercam.position, playercam.rotation) as Rigidbody;
+            keyBody = Instantiate(keyPrefab, playercam.GetChild(0).position, playercam.rotation) as Rigidbody;
+            DisablePickUp(keyBody.gameObject);
             keyBody.AddForce(player.forward * 500);
-           
+            player.GetComponent<UIUpdater>().ThrowKey();
+
         }
+    }
+
+    IEnumerable DisablePickUp(GameObject key)
+	{
+        key.GetComponent<KeyPickUp>().SetActive(false);
+        yield return new WaitForSeconds(2);
+        key.GetComponent<KeyPickUp>().SetActive(true);
     }
 }

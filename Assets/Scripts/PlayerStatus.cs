@@ -18,8 +18,5 @@ public class PlayerStatus : MonoBehaviour
         
     }
     
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 100, 20), "Keys : " + keys);
-    }
+   
 }
