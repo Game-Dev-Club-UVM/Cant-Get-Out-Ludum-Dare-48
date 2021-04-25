@@ -79,11 +79,13 @@ public class PortalPair : MonoBehaviour
         portal1.GetComponent<Portal>().SetOtherRoomID(room2ID);
         portal1.GetComponent<Portal>().SetPlayer(player);
         portal1.GetComponent<Portal>().CreatePlanes();
+        portal1.GetComponent<Portal>().CreateDoor();
 
         portal2.GetComponent<Portal>().SetRoomID(room2ID);
         portal2.GetComponent<Portal>().SetOtherRoomID(room1ID);
         portal2.GetComponent<Portal>().SetPlayer(player);
         portal2.GetComponent<Portal>().CreatePlanes();
+        portal2.GetComponent<Portal>().CreateDoor();
 
         // Each portal's collider plane needs to know about the other's collider plane
         portal1.GetComponent<Portal>().SetColliderPlaneReceiver(portal2.GetComponent<Portal>().GetColliderPlaneTransform());

@@ -36,8 +36,9 @@ public class ColliderPlane : MonoBehaviour
         if (other.tag == "Player")
         {
             // Translate and rotate the player to go through the portal
-            float rotationDiff = -Vector3.SignedAngle(transform.up, receiver.up, Vector3.up);
-            player.transform.Rotate(Vector3.up, rotationDiff);
+            float rotationDiff = Vector3.SignedAngle(transform.up, receiver.up, Vector3.up);
+            Debug.Log(rotationDiff);
+            player.transform.Rotate(Vector3.up, rotationDiff + 180);
 
             float oldY = player.transform.position.y;
             player.enabled = false;

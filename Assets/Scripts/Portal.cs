@@ -6,6 +6,7 @@ public class Portal : MonoBehaviour
 {
     public GameObject colliderPlanePrefab;
     public GameObject renderPlanePrefab;
+    public GameObject doorPrefab;
 
     private int roomID;
     private int otherRoomID;
@@ -14,6 +15,7 @@ public class Portal : MonoBehaviour
 
     private GameObject colliderPlane;
     private GameObject renderPlane;
+    private GameObject door;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,12 @@ public class Portal : MonoBehaviour
     {
         player = input;
     }
+    public void CreateDoor()
+    {
+        door = Instantiate(doorPrefab);
+        door.transform.position = transform.position + 0.5f*transform.up;
+        door.transform.rotation = transform.rotation;
+    }
     public void CreatePlanes()
     {
         renderPlane = Instantiate(renderPlanePrefab);
@@ -48,8 +56,7 @@ public class Portal : MonoBehaviour
         renderPlane.transform.rotation = transform.rotation;
 
         colliderPlane = Instantiate(colliderPlanePrefab);
-        // Slightly offset so it is in front of the render plane
-        colliderPlane.transform.position = transform.position;// + transform.up * 0.5f;
+        colliderPlane.transform.position = transform.position;
         colliderPlane.transform.rotation = transform.rotation;
         colliderPlane.GetComponent<ColliderPlane>().SetRoomID(roomID);
         colliderPlane.GetComponent<ColliderPlane>().SetOtherRoomID(otherRoomID);

@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pivot = transform.position + transform.right * xWidth / 2f - transform.up * zWidth / 2f;
+        pivot = transform.position - transform.right * xWidth / 2f - transform.forward * zWidth / 2f;
     }
 
     // Update is called once per frame
@@ -58,7 +58,7 @@ public class Door : MonoBehaviour
             }
         }
 
-        if(Input.GetKey(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             if(isClosed)
             {

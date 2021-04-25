@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderPlanePrefab: {fileID: 493058432683311810, guid: 6df8202a22dfae144ad4fdd11f6391be, type: 3}
   renderPlanePrefab: {fileID: 3993615626018111664, guid: 6897563a99d30fc4f948e130026c515f, type: 3}
+  doorPrefab: {fileID: 1970517109310453493, guid: 570cd9e342aedb549bd86629d0738aaf, type: 3}
