@@ -13,6 +13,7 @@ public class PortalCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Vector3 playerOffsetFromPortal = playerCamera.position - playerPortal.position;
         transform.position = portal.position + (Quaternion.AngleAxis(180, Vector3.up) * playerOffsetFromPortal);
 

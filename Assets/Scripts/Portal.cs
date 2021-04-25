@@ -49,7 +49,8 @@ public class Portal : MonoBehaviour
 
         colliderPlane = Instantiate(colliderPlanePrefab);
         // Slightly offset so it is in front of the render plane
-        colliderPlane.transform.position = transform.position + transform.up * 0.5f;
+        colliderPlane.transform.position = transform.position;// + transform.up * 0.5f;
+        colliderPlane.transform.rotation = transform.rotation;
         colliderPlane.GetComponent<ColliderPlane>().SetRoomID(roomID);
         colliderPlane.GetComponent<ColliderPlane>().SetOtherRoomID(otherRoomID);
         colliderPlane.GetComponent<ColliderPlane>().SetPlayer(player);
