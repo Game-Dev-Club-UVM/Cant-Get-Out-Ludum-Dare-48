@@ -18,11 +18,18 @@ public class ThorwKey : MonoBehaviour
         {
             
             Rigidbody keyBody;
-            keyBody = Instantiate(keyPrefab, playercam.position, playercam.rotation) as Rigidbody;
-            keyBody.gameObject.SetActive(true);
+            keyBody = Instantiate(keyPrefab, playercam.GetChild(0).position, playercam.rotation) as Rigidbody;
+            DisablePickUp(keyBody.gameObject);
             keyBody.AddForce(player.forward * 500);
             player.GetComponent<UIUpdater>().ThrowKey();
 
         }
+    }
+
+    IEnumerable DisablePickUp(GameObject key)
+	{
+        key.GetComponent<KeyPickUp>().SetActive(false);
+        yield return new WaitForSeconds(2);
+        key.GetComponent<KeyPickUp>().SetActive(true);
     }
 }
