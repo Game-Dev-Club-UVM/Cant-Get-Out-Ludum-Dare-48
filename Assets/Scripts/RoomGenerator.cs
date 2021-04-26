@@ -39,6 +39,7 @@ public class RoomGenerator : MonoBehaviour
         startingRoom.GetComponent<Room>().CreateDoorFrames();
         startingRoom.GetComponent<Room>().CreateFloor();
         startingRoom.GetComponent<Room>().CreateWalls();
+        startingRoom.GetComponent<Room>().CreateLight();
         levels[0].Add(startingRoom);
 
         // Make rooms for each level
@@ -53,6 +54,7 @@ public class RoomGenerator : MonoBehaviour
                 room.GetComponent<Room>().CreateDoorFrames();
                 room.GetComponent<Room>().CreateFloor();
                 room.GetComponent<Room>().CreateWalls();
+                room.GetComponent<Room>().CreateLight();
                 currentLevel.Add(room);
             }
             levels.Add(currentLevel);

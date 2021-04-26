@@ -14,6 +14,7 @@ public class Room : MonoBehaviour
     private GameObject westDoorFrame;
 
     private GameObject floor;
+    private GameObject ceiling;
     private List<GameObject> walls = new List<GameObject>();
 
     private bool northDoorLinked = false;
@@ -29,6 +30,7 @@ public class Room : MonoBehaviour
     private int level;
     private Material floorMat;
     private Material wallMat;
+    private int lightParameter;
 
     public Material floorMat0;
     public Material floorMat1;
@@ -59,6 +61,8 @@ public class Room : MonoBehaviour
     private GameObject doorTopE;
     private GameObject doorTopS;
     private GameObject doorTopW;
+
+    private GameObject light;
 
     // The square of each room
     public static float roomSize = 30f;
@@ -92,41 +96,57 @@ public class Room : MonoBehaviour
         {
             floorMat = floorMat0;
             wallMat = wallMat0;
+            lightParameter = 10;
         }
         else if (level == 1)
         {
             floorMat = floorMat1;
             wallMat = wallMat1;
+            lightParameter = 7;
         }
         else if (level == 2)
         {
             floorMat = floorMat2;
             wallMat = wallMat2;
+            lightParameter = 4;
         }
         else if (level == 3)
         {
             floorMat = floorMat3;
             wallMat = wallMat3;
+            lightParameter = 2;
         }
         else if (level == 4)
         {
             floorMat = floorMat4;
             wallMat = wallMat4;
+            lightParameter = 1;
         }
         else if (level == 5)
         {
             floorMat = floorMat5;
             wallMat = wallMat5;
+            lightParameter = 0;
         }
         else
         {
             floorMat = floorMat6;
             wallMat = wallMat6;
+            lightParameter = 10;
         }
     }
     public void SetPosition(Vector3 position)
     {
         transform.position = position;
+    }
+    public void CreateLight()
+    {
+        light = new GameObject();
+        light.AddComponent<Light>();
+        light.GetComponent<Light>().intensity = lightParameter / 2;
+        light.GetComponent<Light>().range = 4*lightParameter + 1;
+        light.transform.SetParent(transform);
+        light.transform.position = transform.position + Vector3.up * (roomHeight - 0.2f);
     }
     public void CreateDoorFrames()
     {
@@ -260,6 +280,11 @@ public class Room : MonoBehaviour
         floor.transform.localScale = new Vector3(roomSize/10f, 1f, roomSize/10f);
         floor.transform.position = transform.position;
         floor.GetComponent<Renderer>().material = floorMat;
+
+        ceiling = Instantiate(wallPrefab);
+        ceiling.transform.localScale = new Vector3(roomSize, 1f, roomSize);
+        ceiling.transform.position = transform.position + Vector3.up * (roomHeight + 0.5f);
+        ceiling.GetComponent<Renderer>().material = floorMat;
     }
 
     private void ChooseDoorLocations()
