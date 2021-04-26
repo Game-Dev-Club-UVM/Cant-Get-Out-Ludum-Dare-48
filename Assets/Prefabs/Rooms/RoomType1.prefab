@@ -57,15 +57,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorFramePrefab: {fileID: 5176604375180845748, guid: 3f59dc31cc99d13498baa2c43d9c4e02, type: 3}
-  halfWallPrefab: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+  wallPrefab: {fileID: 8391713176049315517, guid: e2bc06b57c8e73346973c3b87d619d94, type: 3}
   floorPrefab: {fileID: 5363142334722593624, guid: 4eea616a190d0d640b0a88987acf07fb, type: 3}
-  mat0: {fileID: 2100000, guid: 3baa746ba6e75904c8e351ff01519fb1, type: 2}
-  mat1: {fileID: 2100000, guid: 00f729f47d39aec47a78b2db469f0dd4, type: 2}
-  mat2: {fileID: 2100000, guid: ea017c850f7b8bc4c931bf78f3e8a9e3, type: 2}
-  mat3: {fileID: 2100000, guid: e2579e17d8f67f94c8c3d52c259ef0a8, type: 2}
-  mat4: {fileID: 2100000, guid: aecbafca7a696024cb181d2e0ddd9691, type: 2}
-  mat5: {fileID: 2100000, guid: 93265bcc63cddf142a33a082b26c6f70, type: 2}
-  mat6: {fileID: 2100000, guid: c08da34d26bfb1f48a1a31dfe9d3ac75, type: 2}
+  floorMat0: {fileID: 2100000, guid: 3baa746ba6e75904c8e351ff01519fb1, type: 2}
+  floorMat1: {fileID: 2100000, guid: 00f729f47d39aec47a78b2db469f0dd4, type: 2}
+  floorMat2: {fileID: 2100000, guid: ea017c850f7b8bc4c931bf78f3e8a9e3, type: 2}
+  floorMat3: {fileID: 2100000, guid: e2579e17d8f67f94c8c3d52c259ef0a8, type: 2}
+  floorMat4: {fileID: 2100000, guid: aecbafca7a696024cb181d2e0ddd9691, type: 2}
+  floorMat5: {fileID: 2100000, guid: 93265bcc63cddf142a33a082b26c6f70, type: 2}
+  floorMat6: {fileID: 2100000, guid: c08da34d26bfb1f48a1a31dfe9d3ac75, type: 2}
+  wallMat0: {fileID: 2100000, guid: 7c4cd4e6542c6ca4d96c7e9d40e3f080, type: 2}
+  wallMat1: {fileID: 2100000, guid: 368fc3c3de6f57549b2bf427d937a63b, type: 2}
+  wallMat2: {fileID: 2100000, guid: 893fb11ea6402f0409e96602c92b7cdd, type: 2}
+  wallMat3: {fileID: 2100000, guid: f1d20c061a3be574491fc2b3db5eab89, type: 2}
+  wallMat4: {fileID: 2100000, guid: a83e0b3e6adef814caaa697d0d1b2f7d, type: 2}
+  wallMat5: {fileID: 2100000, guid: 0ddee4604e1ab564dba5f21d2b8c5fb5, type: 2}
+  wallMat6: {fileID: 2100000, guid: 38a628b8e9e3c8c4d9b607431057a99a, type: 2}
 --- !u!1 &8849017014410542197
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SouthLeftWall
       objectReference: {fileID: 0}
+    - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
 --- !u!4 &4969605097815760020 stripped
@@ -478,6 +489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WestRightWall
       objectReference: {fileID: 0}
+    - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
 --- !u!4 &3314700833436413385 stripped
@@ -539,6 +554,10 @@ PrefabInstance:
     - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
       propertyPath: m_Name
       value: NorthRightWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
@@ -602,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EastRightWall
       objectReference: {fileID: 0}
+    - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
 --- !u!4 &2312278664138568456 stripped
@@ -664,6 +687,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SouthRightWall
       objectReference: {fileID: 0}
+    - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
 --- !u!4 &3551466776562870521 stripped
@@ -725,6 +752,10 @@ PrefabInstance:
     - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
       propertyPath: m_Name
       value: EastLeftWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
@@ -854,6 +885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NorthLeftWall
       objectReference: {fileID: 0}
+    - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
 --- !u!4 &1648262319114971875 stripped
@@ -915,6 +950,10 @@ PrefabInstance:
     - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
       propertyPath: m_Name
       value: WestLeftWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772937329762946239, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcbd13ab4a5ba8499b44ca8c9e5b6f9, type: 3}
