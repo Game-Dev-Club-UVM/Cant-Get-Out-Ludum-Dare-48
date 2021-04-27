@@ -14,6 +14,14 @@ public class KeyPickUp : MonoBehaviour
 
             Debug.Log("Player Picked up Key: " + gameObject.name);
         }
+        if (other.tag == "Door" && active)
+        {
+
+            this.gameObject.SetActive(false);
+            other.GetComponentInParent<Door>().Open();
+
+            Debug.Log("Player Picked up Key: " + gameObject.name);
+        }
     }
 
     public void SetActive(bool b)
