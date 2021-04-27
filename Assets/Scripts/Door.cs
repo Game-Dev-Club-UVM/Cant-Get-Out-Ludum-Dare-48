@@ -58,17 +58,7 @@ public class Door : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            if(isClosed)
-            {
-                Open();
-            }
-            else if(isOpen)
-            {
-                Close();
-            }
-        }
+        
     }
 
     public void Open()
