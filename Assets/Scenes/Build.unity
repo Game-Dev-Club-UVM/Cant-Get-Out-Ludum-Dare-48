@@ -443,6 +443,10 @@ PrefabInstance:
       propertyPath: keysLeftInRoom
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 3582370925531821373, guid: 31febec2f8f89af4795b4a99ab9ffee8, type: 3}
+      propertyPath: mouseSensitivity
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3582370925758908548, guid: 31febec2f8f89af4795b4a99ab9ffee8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -512,7 +516,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
